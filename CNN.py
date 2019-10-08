@@ -1,6 +1,4 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
+# -*- coding: utf-8 -*
 from keras.datasets import fashion_mnist #파이썬으로 작성된 오픈소스 신경망 라이브러리.텐서플로 팀은 코어 라이브러리에 케라스를 지원하기로 함.
 import numpy as np
 import tensorflow
