@@ -143,13 +143,13 @@ for epoch in range(num_epochs):
         # =================================================================== #
         d_losses[epoch] = d_losses[epoch]*(i/(i+1.)) + d_loss.data*(1./(i+1.))
         g_losses[epoch] = g_losses[epoch]*(i/(i+1.)) + g_loss.data*(1./(i+1.))
-        real_scores[epoch] = real_scores[epoch]*(i/(i+1.)) + real_score.mean().data[0]*(1./(i+1.))
-        fake_scores[epoch] = fake_scores[epoch]*(i/(i+1.)) + fake_score.mean().data[0]*(1./(i+1.))
+        real_scores[epoch] = real_scores[epoch]*(i/(i+1.)) + real_score.mean().data*(1./(i+1.))
+        fake_scores[epoch] = fake_scores[epoch]*(i/(i+1.)) + fake_score.mean().data*(1./(i+1.))
         
         if (i+1) % 200 == 0:
             print('Epoch [{}/{}], Step [{}/{}], d_loss: {:.4f}, g_loss: {:.4f}, D(x): {:.2f}, D(G(z)): {:.2f}' 
-                  .format(epoch, num_epochs, i+1, total_step, d_loss.data, g_loss.data, 
-                          real_score.mean().data[0], fake_score.mean().data[0]))
+                  .format(epoch, num_epochs, i+1, total_step, d_loss.data, g_loss.data,
+                          real_score.mean().data, fake_score.mean().data))
     
     # Save real images
     if (epoch+1) == 1:
